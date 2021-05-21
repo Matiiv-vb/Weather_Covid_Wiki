@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css"> -->
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- <link rel="stylesheet" href="/node_modules/bootstrap/"> -->
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col col-lg-12 text-center">
+        <h1>Погода і Covid19 по API</h1>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col col-lg-3">
+        <p><input class="input" list="variant" type="text" autocomplete="on" value="" placeholder="Введіть назву міста">
+          <datalist id="variant">
+          </datalist>
+        </p>
+        <button class="buttonShow btn btn-primary">Показати</button>
+      </div>
+
+      <div class="col col-xl-7 col-lg-6">
+
+      </div>
+      <div class="col col-xl-2 col-lg-3 col-md-3 col-5">
+        <button class="buttonIp btn btn-primary">Визначити місто</button>
+        <div class="radBut">
+          <p></p>
+          <input type="radio" id="ukr" name="loc" value="ukr" checked>
+          <label for="ukr">Міста України</label><br>
+          <input type="radio" id="allCity" name="loc" value="allCity">
+          <label for="allCity">Увесь світ</label><br>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col col-lg-12">
+        <table class="table table-dark table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Місто:</th>
+              <th scope="col" class="cityDeskr">-</th>
+              <th scope="col" class="map"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Погода:</th>
+              <td class="weather">-</td>
+              <td rowspan="6" class="minImg">
+                <img src="http://openweathermap.org/img/wn/04d@2x.png" height="200" width="200">
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Темпаратура:</th>
+              <td class="temp">-</td>
+
+            </tr>
+            <tr>
+              <th scope="row">Вологість:</th>
+              <td class="humidity">-</td>
+            </tr>
+            <tr>
+              <th scope="row">Тиск:</th>
+              <td class="press">-</td>
+            </tr>
+            <tr>
+              <th scope="row">Видимість:</th>
+              <td class="visibility">-</td>
+            </tr>
+            <tr>
+              <th scope="row">Швидкість вітру:</th>
+              <td class="wind">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="container  overflow-hidden">
+      <h4>Дані про Covid19: Загальна кількість (поточна)</h4>
+      <div class="row gx-5">
+        <div class="col">
+          <div class="p-3 border bg-danger ">
+            <div class="row">
+              <div class="col col-lg-12 covidAll">
+                <table class="table covid1 table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Країна:</th>
+                      <th scope="col" class="regions">-</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Інфіковані:</th>
+                      <td class="activecase">-</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Померли:</th>
+                      <td class="death">-</td>
+
+                    </tr>
+                    <tr>
+                      <th scope="row">Одужали:</th>
+                      <td class="recover">-</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Кількість тестів:</th>
+                      <td class="test">-</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Загальна кількість:</th>
+                      <td class="total">-</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-3 border bg-danger ">
+            <div class="row">
+              <div class="col col-lg-12 covidAll">
+                <table class="table covid1 table-striped table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">Увесь світ</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Інфіковані:</th>
+                      <td class="activecase_all">-</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Померли:</th>
+                      <td class="death_all">-</td>
+
+                    </tr>
+                    <tr>
+                      <th scope="row">Одужали:</th>
+                      <td class="recover_all">-</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Кількість тестів:</th>
+                      <td class="test_all">-</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Загальна кількість:</th>
+                      <td class="total_all">-</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <div>
+          <h4 class="headWiki"></h4>
+          <div class="areaWiki"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row footer">
+      <p class="col name">Виконав: Матіїв Василь</p>
+      <p>
+        <a href="https://www.facebook.com/profile.php?id=100011191119423" target="_blank"><img src="/icons/facebook.svg"
+            width="40" height="40" alt="facebook"></a>
+        <a href="https://t.me/mvb_admin" target="_blank"><img src="/icons/telegram.svg" width="40" height="40"
+            alt="telegram"></a>
+      </p>
+    </div>
+
+  </div>
+
+
+
+  </div>
+  <!-- <script src="script.js" type="module"></script> -->
+  <script src="test.js" type="module"></script>
+</body>
+
+</html>
